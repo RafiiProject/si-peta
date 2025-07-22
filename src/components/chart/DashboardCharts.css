@@ -1,0 +1,111 @@
+.chart-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px 20px;
+    background-color: #e6f8fd;
+  }
+  
+  .top-row,
+  .bottom-row {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .chart-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 285px;
+  }
+  
+  .chart-card.chart-bar {
+    flex: 2;
+  }
+  
+  .chart-card.chart-pie {
+    flex: 1;
+    min-height: 300px;
+    max-width: 200px;
+  }
+  
+  .chart-title {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* === Scrollable container for wide chart (Last Month) === */
+  .scroll-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -ms-overflow-style: none; /* IE/Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+  
+  .scroll-container::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+  
+  .chart-content-wide {
+    width: 1200px; /* Adjust width as needed */
+    padding-right: 20px;
+  }
+  
+  .scroll-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+  }
+  
+  .chart-scroll-wrapper {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 10px;
+    scroll-behavior: smooth;
+    padding: 10px 5px;
+    white-space: nowrap;
+  }
+  
+  .scroll-button {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .scroll-button.left {
+    margin-right: 5px;
+  }
+  
+  .scroll-button.right {
+    margin-left: 5px;
+  }
+  
+
+  @media (max-width: 992px) {
+    .top-row,
+    .bottom-row {
+      flex-direction: column;
+    }
+  
+    .chart-card {
+      width: 100%;
+    }
+  }
+  

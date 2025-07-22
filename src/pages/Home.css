@@ -1,0 +1,11 @@
+.home-container {
+    display: flex;
+}
+
+.main-content {
+    margin-left: 250px; /* Sesuai dengan lebar sidebar */
+    width: calc(100% - 250px);
+    padding: 20px;
+    background: #f5f5f5;
+    min-height: 100vh;
+}

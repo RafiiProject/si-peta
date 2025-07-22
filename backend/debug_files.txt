@@ -1,0 +1,12 @@
+Array
+(
+    [file] => Array
+        (
+            [name] => rpk-barito.pdf
+            [type] => application/pdf
+            [tmp_name] => C:\xampp\tmp\php604A.tmp
+            [error] => 0
+            [size] => 78295
+        )
+
+)

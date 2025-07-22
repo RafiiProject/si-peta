@@ -1,0 +1,149 @@
+/* Layout utama */
+.dashboard-container,
+.home-container {
+  display: flex;
+  background-color: #eafaff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 220px;
+  padding: 20px 30px;
+  background-color: #eafaff;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+/* Judul section */
+.section-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #2999ff;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 24px 0;
+}
+
+/* Grid kartu */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 10px;
+}
+
+/* Kartu */
+.card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+  padding: 25px 20px;
+  min-height: 150px;
+  position: relative;
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Elips vertikal (latar ikon) */
+.card-icon-ellipse {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  width: 70px;
+  height: 120px;
+  background-color: #ffdadd;
+  border-radius: 50%;
+}
+
+/* Lingkaran dalam elips */
+.card-icon-circle {
+  width: 55px;
+  height: 55px;
+  margin-left: 8px;
+  margin-top: 10px;
+  background-color: #ffaeb1;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Ikon gedung */
+.card-icon-circle .icon {
+  color: #dc143c;
+  font-size: 80px;
+}
+
+/* Isi teks */
+.card b {
+  font-size: 15px;
+  color: #333;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #444;
+  margin: 2px 0;
+}
+
+.card p span {
+  font-weight: bold;
+}
+
+/* Link 'See all data' */
+.card a,
+.card-link {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 6px;
+  display: inline-block;
+}
+
+.card a:hover,
+.card-link:hover {
+  text-decoration: underline;
+}
+
+/* Tambahan untuk menghilangkan garis bawahi default dari Link */
+.card-grid a {
+  text-decoration: none;
+  color: inherit;
+}
+.chart-section {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+  
+  .chart-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    flex: 1 1 48%;
+    min-width: 320px;
+  }
+  
+  .donut-section {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+  
+  

@@ -1,0 +1,7 @@
+Array
+(
+    [nik] => 3374103008070001
+    [nama] => AA
+    [keterangan] => KEHILANGAN
+    [tanggal] => 2025-04-24
+)
