@@ -10,6 +10,7 @@ const Hgajahmungkur = () => {
       <Sidebar />
       <div className="main-content">
         <Navbar />
+        <div className="section-title">Gajahmungkur</div>
         <Table />
       </div>
     </div>

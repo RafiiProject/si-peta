@@ -8,7 +8,7 @@ import Register from "./pages/Register";
 import UserList from "./pages/UserList";
 import EditUser from "./pages/EditUser";
 import Login from "./pages/Login";
-import Logout from "./pages/Logout";
+import Logout from "./pages/LogoutPopup";
 import Unauthorized from "./pages/Unautorized";
 
 // Dashboard user
@@ -117,9 +117,10 @@ const App = () => {
     const checkIdle = () => {
       const loginTime = localStorage.getItem("loginTime");
       const maxIdleTime = 15 * 60 * 1000; // 15 menit
+  
       if (loginTime && Date.now() - loginTime > maxIdleTime) {
         localStorage.clear();
-        window.location.href = "/logout"; // langsung logout
+        window.location.href = "/logout"; // ⬅️ langsung logout tanpa popup
       }
     };
   
@@ -134,6 +135,7 @@ const App = () => {
       clearInterval(interval);
     };
   }, []);
+  
 
   return (
     <Router>
@@ -231,4 +233,5 @@ const App = () => {
     </Router>
   );
 };
+
 export default App;

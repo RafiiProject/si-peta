@@ -10,6 +10,7 @@ const Hbarat = () => {
       <Sidebar />
       <div className="main-content">
         <Navbar />
+        <div className="section-title">Semarang Barat</div>
         <Table />
       </div>
     </div>

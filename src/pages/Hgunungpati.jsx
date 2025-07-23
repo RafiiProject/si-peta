@@ -10,6 +10,7 @@ const Hgunungpati = () => {
       <Sidebar />
       <div className="main-content">
         <Navbar />
+        <div className="section-title">Gunung Pati</div>
         <Table />
       </div>
     </div>

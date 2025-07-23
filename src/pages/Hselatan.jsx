@@ -10,6 +10,7 @@ const Hselatan = () => {
       <Sidebar />
       <div className="main-content">
         <Navbar />
+        <div className="section-title">Semarang Selatan</div>
         <Table />
       </div>
     </div>

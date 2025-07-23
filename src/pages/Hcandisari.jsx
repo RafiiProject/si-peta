@@ -10,6 +10,7 @@ const Hcandisari = () => {
       <Sidebar />
       <div className="main-content">
         <Navbar />
+        <div className="section-title">Candisari</div>
         <Table />
       </div>
     </div>

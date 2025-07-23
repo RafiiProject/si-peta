@@ -10,6 +10,7 @@ const Home = () => {
       <Sidebar />
       <div className="main-content">
         <Navbar />
+        <div className="section-title">Semarang Tengah</div>
         <Table />
       </div>
     </div>

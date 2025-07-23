@@ -1,254 +1,263 @@
 /* Container utama */
 .container {
 
-    background: #e0f7fa;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 1200px;
-    margin: auto;
-  }
-  
-  /* Header bar */
-  .header-bar {
-    background-color: #2c3e50;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    color: white;
-    font-weight: 600;
-    font-size: 16px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    height: 80px;
-    min-width: 1241px;
-  }
-  
-  .button-group {
-    gap: 20px;
-  }
-  
-  .btn-add, .btn-print {
-    padding: 6px 12px;
-    font-size: 14px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-    border: none;
-  }
-  
-  .btn-add {
-    background: #28a745;
-    color: white;
-  }
-  
-  .btn-print {
-    background: #ffc107;
-    color: black;
-  }
-  
-  /* Toolbar filter */
-  .toolbar {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    background: #2980b9;
-    padding: 12px;
-    border-radius: 10px;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .search-input, .date-input {
-    padding: 8px 12px;
-    border-radius: 6px;
-    border: none;
-    font-size: 14px;
-    width: 220px;
-  }
-  
-  /* Data harian */
-  .daily-summary {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-  }
-  
-  .summary-box {
-    flex: 1 1 45%;
-    border-radius: 15px;
-    padding: 16px;
-    text-align: center;
-    font-weight: bold;
-    font-family: 'Poppins', sans-serif;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-    font-size: 15px;
-    color: white;
-    min-height: 70px;
-    max-height: 70px;
-  }
-  
-  .summary-box.box-blue {
-    background-color: #007bff;
-  }
-  
-  .summary-box.box-red {
-    background-color: #dc3545;
-  }
-  
-  .summary-box h2 {
-    font-size: 26px;
-    margin: 8px 0 0;
-  }
-  
-  .summary-box p {
-    margin: 0;
-    font-size: 15px;
-  }
-  
-  /* Data keseluruhan */
-  .data-summary {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px; /* Diperkecil dari 40px ke 20px */
-    margin-bottom: 30px;
-    flex-wrap: wrap;
-  }
-  
-  .data-box {
-    background: white;
-    padding: 14px 16px;
-    border-radius: 14px;
-    text-align: center;
-    font-weight: bold;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 180px;
-    height: 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-family: 'Poppins', sans-serif;
-    transition: transform 0.2s ease;
-  }
-  
-  .data-box:hover {
-    transform: translateY(-2px);
-  }
-  
-  .data-box p {
-    margin: 0;
-    font-size: 15px;
-    color: #2c3e50;
-    line-height: 1.2;
-  }
-  
-  .text-blue,
-  .text-red {
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 4px; /* Lebih rapat dari sebelumnya */
-  }
-  
-  .text-blue {
-    color: #007bff;
-  }
-  
-  .text-red {
-    color: red;
-  }
-  
-  
-  /* Tabel data */
-  .data-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    font-size: 14px;
-  }
-  
-  .data-table th,
-  .data-table td {
-    padding: 10px;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .data-table th {
-    background: #2980b9;
-    color: white;
-    font-weight: bold;
-  }
-  
-  .data-table tbody tr:hover {
-    background: #f1f1f1;
-  }
-  
-  /* Tombol aksi */
-  .btn-view {
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 4px 8px;
-    margin-right: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .btn-delete {
-    background: #dc3545;
-    color: white;
-    border: none;
-    padding: 4px 8px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  /* Badge rusak */
-  .keterangan-badge {
-    background-color: #00bfff;
-    color: white;
-    padding: 6px 12px;
-    border-radius: 10px;
-    font-weight: bold;
-    font-size: 13px;
-    display: inline-block;
-  }
-  
-  .badge-rusak {
-    background-color: #dc3545;
-  }
-  
-  /* Tooltip */
-  .tooltip {
-    position: relative;
-    cursor: pointer;
-  }
-  
-  .tooltip::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: 125%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #333;
-    color: #fff;
-    padding: 6px 10px;
-    border-radius: 5px;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-    font-size: 12px;
-    z-index: 99;
-  }
-  
-  .tooltip:hover::after {
-    opacity: 1;
-  }
-  
+  background: #e0f7fa;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Gaya Umum */
+
+
+/* Data harian */
+.daily-summary {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.summary-box {
+  flex: 1 1 45%;
+  border-radius: 15px;
+  padding: 16px;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  font-size: 15px;
+  color: white;
+  min-height: 70px;
+  max-height: 70px;
+}
+
+.summary-box.box-blue {
+  background-color: #007bff;
+}
+
+.summary-box.box-red {
+  background-color: #dc3545;
+}
+
+.summary-box h2 {
+  font-size: 26px;
+  margin: 8px 0 0;
+}
+
+.summary-box p {
+  margin: 0;
+  font-size: 15px;
+}
+
+/* Data keseluruhan */
+.data-summary {
+  display: flex;
+  justify-content: space-between !important;
+  align-items: center;
+  gap: 20px; /* Diperkecil dari 40px ke 20px */
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.data-box {
+  background: white;
+  padding: 14px 16px;
+  border-radius: 14px;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 180px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  transition: transform 0.2s ease;
+}
+
+.data-box:hover {
+  transform: translateY(-2px);
+}
+
+.data-box p {
+  margin: 0;
+  font-size: 15px;
+  color: #2c3e50;
+  line-height: 1.2;
+}
+
+.text-blue,
+.text-red {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 4px; /* Lebih rapat dari sebelumnya */
+}
+
+.text-blue {
+  color: #007bff;
+}
+
+.text-red {
+  color: red;
+}
+
+
+/* Tabel data */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+.data-table th,
+.data-table td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.data-table th {
+  background: #2980b9;
+  color: white;
+  font-weight: bold;
+}
+
+.data-table tbody tr:hover {
+  background: #f1f1f1;
+}
+
+/* Tombol aksi */
+.btn-view {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  margin-right: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-delete {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Badge rusak */
+.keterangan-badge {
+  background-color: #00bfff;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 13px;
+  display: inline-block;
+}
+
+.badge-rusak {
+  background-color: #dc3545;
+}
+
+.separated-toolbar {
+  background-color: #2c89c8;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  position: relative;
+}
+
+/* Tengah */
+.toolbar-center {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Kanan */
+.toolbar-right {
+  flex: 4;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.search-input{
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  width: 350px !important;
+}
+
+.date-input {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  width: 200px !important;
+}
+
+.btn-add,
+.btn-print {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  width: 100px;
+}
+
+.btn-add {
+  background-color: #28a745;
+}
+
+.btn-print {
+  background-color: #ffc107;
+  color: black;
+}
+
+/* Tambahan agar CSS mobile tetap aktif meskipun hanya .separated-toolbar yang digunakan */
+@media screen and (max-width: 768px) {
+.separated-toolbar {
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 15px !important;
+  padding: 10px !important;
+}
+
+.separated-toolbar .toolbar-center,
+.separated-toolbar .toolbar-right {
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+}
+
+.separated-toolbar .toolbar-center input,
+.separated-toolbar .toolbar-right button {
+  width: 90% !important;
+  max-width: 400px !important;
+  text-align: center !important;
+}
+}
+

@@ -10,6 +10,7 @@ const Hgenuk = () => {
       <Sidebar />
       <div className="main-content">
         <Navbar />
+        <div className="section-title">Genuk</div>
         <Table />
       </div>
     </div>

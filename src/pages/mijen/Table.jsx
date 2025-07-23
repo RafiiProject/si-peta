@@ -103,11 +103,23 @@ const Table = () => {
     printWindow.document.write("<style>body{font-family:sans-serif} table{width:100%;border-collapse:collapse} th,td{padding:8px;border:1px solid #000;} th{background:#f2f2f2}</style>");
     printWindow.document.write("</head><body>");
     printWindow.document.write("<h2>Mijen</h2>");
-    printWindow.document.write(`<p><strong>Jumlah Data:</strong> ${filteredData.length} | <strong>Data Rusak:</strong> ${countRusak}</p>`);
+    printWindow.document.write(`<p><strong>Data Masuk:</strong> ${countMasuk} | <strong>Data Rusak:</strong> ${countRusak}</p>`);
     printWindow.document.write("<table><thead><tr><th>No</th><th>NIK</th><th>Nama</th><th>Keterangan</th><th>Tanggal</th></tr></thead><tbody>");
     filteredData.forEach((item, index) => {
+      const nik = item.keterangan === "RUSAK" ? "" : (item.nik || "");
+      const nama = item.keterangan === "RUSAK" ? "" : (item.nama || "");
+    
+      const date = new Date(item.tanggal);
+      const formattedDate = `${String(date.getDate()).padStart(2, "0")}-${String(date.getMonth() + 1).padStart(2, "0")}-${date.getFullYear()}`;
+    
       printWindow.document.write(
-        `<tr><td>${index + 1}</td><td>${item.nik}</td><td>${item.nama}</td><td>${item.keterangan}</td><td>${item.tanggal}</td></tr>`
+        `<tr>
+          <td>${index + 1}</td>
+          <td>${nik}</td>
+          <td>${nama}</td>
+          <td>${item.keterangan}</td>
+          <td>${formattedDate}</td>
+        </tr>`
       );
     });
     printWindow.document.write("</tbody></table></body></html>");
@@ -117,14 +129,6 @@ const Table = () => {
 
   return (
     <div className="container">
-      <div className="header-bar">
-        <div>Mijen</div>
-        <div className="button-group">
-          <button className="btn-add" onClick={() => navigate("/add-data/mijen")}>Add New</button>
-          <button className="btn-print" onClick={handlePrint}>Print</button>
-        </div>
-      </div>
-
       {role === "admin" && (
         <>
           <ChartSection dataPerMonth={chartDataPerMonth} dataPerYear={chartDataPerYear} />
@@ -141,21 +145,36 @@ const Table = () => {
         </>
       )}
 
-      <div className="toolbar">
-        <input
-          type="text"
-          placeholder="Search by NIK or Name"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="search-input"
-        />
-        <input
-          type="date"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-          className="date-input"
-        />
+      <div className="toolbar separated-toolbar">
+        <div className="toolbar-center">
+          <input
+            type="text"
+            placeholder="Search by NIK or Name"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="search-input"
+          />
+          <input
+            type="date"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+            className="date-input"
+          />
+        </div>
+        
+        <div className="toolbar-right">
+          <button className="btn-add" onClick={() => navigate("/add-data/mijen")}>
+            Add New
+          </button>
+          <button className="btn-print" onClick={handlePrint}>
+            Print
+          </button>
+        </div>
       </div>
+
+
+
+
 
       <div className="data-summary">
         <div className="data-box">
@@ -194,8 +213,8 @@ const Table = () => {
                   </td>
                   <td>{item.tanggal}</td>
                   <td>
-                    <button className="btn-view" onClick={() => navigate(`/view/mijen/${item.id}`)}>View</button>
-                    <button className="btn-delete" onClick={() => navigate(`/delete/${item.id}`)}>Delete</button>
+                    <button className="btn-view" onClick={() => navigate(`/view/Mijen/${item.id}`)}>View</button>
+                    <button className="btn-delete" onClick={() => navigate(`/delete/mijen/${item.id}`)}>Delete</button>
                   </td>
                 </tr>
               ))

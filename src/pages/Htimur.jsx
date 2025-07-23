@@ -10,6 +10,7 @@ const Htimur = () => {
       <Sidebar />
       <div className="main-content">
         <Navbar />
+        <div className="section-title">Semarang Timur</div>
         <Table />
       </div>
     </div>

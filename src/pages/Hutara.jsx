@@ -10,6 +10,7 @@ const Hutara = () => {
       <Sidebar />
       <div className="main-content">
         <Navbar />
+        <div className="section-title">Semarang Utara</div>
         <Table />
       </div>
     </div>

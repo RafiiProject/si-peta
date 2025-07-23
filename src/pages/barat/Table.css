@@ -9,61 +9,7 @@
   }
   
  /* Gaya Umum */
-.header-bar {
-  display: flex !important;
- 
-  align-items: center;
-  justify-content: space-between;
-  padding: clamp(8px, 2vh, 20px) clamp(16px, 4vw, 32px) !important;
-  background-color: #2c3e50;
-  color: white;
-  font-weight: 600;
-  font-size: clamp(14px, 1.5vw, 20px);
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  width: 100%;
-  gap: 10px;
-  box-sizing: border-box;
-  min-height: 60px;
-  overflow-x: hidden;
-}
 
-.button-group {
-  display: flex !important;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 10px;
-}
-
-.btn-add,
-.btn-print {
-  flex: 1 1 auto;
-  min-width: 120px;
-  max-width: 180px;
-  white-space: nowrap;
-}
-  
-  /* Toolbar filter */
-  .toolbar {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    background: #2980b9;
-    padding: 12px;
-    border-radius: 10px;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .search-input, .date-input {
-    padding: 8px 12px;
-    border-radius: 6px;
-    border: none;
-    font-size: 14px;
-    width: 220px;
-  }
   
   /* Data harian */
   .daily-summary {
@@ -109,7 +55,7 @@
   /* Data keseluruhan */
   .data-summary {
     display: flex;
-    justify-content: center;
+    justify-content: space-between !important;
     align-items: center;
     gap: 20px; /* Diperkecil dari 40px ke 20px */
     margin-bottom: 30px;
@@ -221,152 +167,193 @@
     background-color: #dc3545;
   }
   
-  /* Tooltip */
-  .tooltip {
-    position: relative;
-    cursor: pointer;
-  }
-  
-  .tooltip::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: 125%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #333;
-    color: #fff;
-    padding: 6px 10px;
-    border-radius: 5px;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-    font-size: 12px;
-    z-index: 99;
-  }
-  
-  .tooltip:hover::after {
-    opacity: 1;
-  }
- /* ===================== RESPONSIVE ===================== */
- @media (max-width: 1024px) {
-  .header-bar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 16px;
-  }
-
-  .button-group {
-    width: 100%;
-    justify-content: center;
+  .separated-toolbar {
+    background-color: #2c89c8;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 12px;
+    position: relative;
   }
-
-  .data-summary {
+  
+  /* Tengah */
+  .toolbar-center {
+    flex: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  /* Kanan */
+  .toolbar-right {
+    flex: 4;
+    display: flex;
+    justify-content: flex-end;
     gap: 10px;
   }
-
-  .data-box {
-    width: 45%;
-    height: auto;
-    padding: 12px;
+  
+  .search-input{
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    width: 350px !important;
   }
 
-  .daily-summary {
-    gap: 10px;
-  }
-
-  .summary-box {
-    flex: 1 1 100%;
-    max-height: none;
-  }
-
-  .search-input,
   .date-input {
-    width: 100%;
-    max-width: 100%;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    width: 200px !important;
   }
-
-  .toolbar {
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 768px) {
-  .container {
-    padding: 10px;
-  }
-
-  .header-bar {
-    font-size: 16px;
-  }
-
-  .data-box {
-    width: 100%;
-  }
-
+  
   .btn-add,
   .btn-print {
-    width: 100%;
-    margin-top: 5px;
-    font-size: 14px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    width: 100px;
   }
-
-  .data-table th,
-  .data-table td {
-    font-size: 12px;
-    padding: 8px;
+  
+  .btn-add {
+    background-color: #28a745;
   }
-
-  .summary-box h2 {
-    font-size: 20px;
-  }
-
-  .summary-box p {
-    font-size: 13px;
-  }
-
-  .toolbar {
-    gap: 6px;
-    padding: 10px;
-  }
-
-  .search-input,
-  .date-input {
-    width: 100%;
-  }
-
-  .button-group {
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .header-bar {
-    font-size: 14px;
-  }
-
-  .data-table th,
-  .data-table td {
-    font-size: 11px;
-    padding: 6px;
-  }
-
-  .data-box p,
-  .text-blue,
-  .text-red {
-    font-size: 14px;
-  }
-
-  .summary-box h2 {
-    font-size: 18px;
-  }
-
-  .btn-add,
+  
   .btn-print {
-    font-size: 13px;
+    background-color: #ffc107;
+    color: black;
   }
+  
+/* Tambahan agar CSS mobile tetap aktif meskipun hanya .separated-toolbar yang digunakan */
+@media screen and (max-width: 922px) {
+  .separated-toolbar {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 15px !important;
+    padding: 10px !important;
+  }
+
+  .separated-toolbar .toolbar-center,
+  .separated-toolbar .toolbar-right {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+
+  .separated-toolbar .toolbar-center input,
+  .separated-toolbar .toolbar-right button {
+    width: 90% !important;
+    max-width: 400px !important;
+    text-align: center !important;
+  }
+    .data-table {
+      width: 100% !important;
+      table-layout: fixed !important;
+      word-wrap: break-word;
+      box-sizing: border-box;
+    }
+  
+    .data-table th,
+    .data-table td {
+      font-size: 11px !important;
+      padding: 6px 4px !important;
+      white-space: normal !important;
+      overflow-wrap: break-word;
+    }
+  
+    .data-table-container {
+      overflow-x: auto;
+      width: 100%;
+    }
+  
+    .card {
+      width: 100% !important;
+      box-sizing: border-box;
+    }
+  }
+  table {
+    font-size: 10px;
+  }
+
+  th, td {
+    padding: 4px 6px;
+    white-space: nowrap;
+  }
+
+  .btn {
+    font-size: 10px;
+    padding: 4px 6px;
+  }
+
+  .status-btn {
+    font-size: 9px;
+    padding: 4px 6px;
+    white-space: nowrap;
+  }
+
+  /* Pastikan tidak ada horizontal scroll */
+  .table-container {
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  .action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+/* Umumkan styling table agar rapi */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* penting agar proporsi kolom bisa dikontrol */
+}
+
+/* Header dan data kolom */
+th, td {
+  padding: 8px 6px;
+  text-align: center;
+  word-wrap: break-word; /* supaya kata panjang bisa turun ke baris berikutnya */
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+/* Atur lebar spesifik */
+th:nth-child(1), td:nth-child(1) { width: 40px; }  /* No */
+th:nth-child(2), td:nth-child(2) { width: 120px; } /* NIK */
+th:nth-child(3), td:nth-child(3) { width: 100px; } /* Nama */
+th:nth-child(4), td:nth-child(4) { width: 120px; } /* Keterangan */
+th:nth-child(5), td:nth-child(5) { width: 90px; }  /* Tanggal */
+th:nth-child(6), td:nth-child(6) { width: 100px; } /* Action */
+
+/* Agar badge keterangan tidak terlalu tinggi */
+.badge {
+  display: inline-block;
+  white-space: normal;
+  word-break: break-word;
+  font-size: 10px;
+  padding: 4px 6px;
+  border-radius: 8px;
+  line-height: 1.2;
+  max-width: 100%;
+}
+
+  

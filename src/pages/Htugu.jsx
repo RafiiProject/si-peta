@@ -10,6 +10,7 @@ const Htugu = () => {
       <Sidebar />
       <div className="main-content">
         <Navbar />
+        <div className="section-title">Tugu</div>
         <Table />
       </div>
     </div>

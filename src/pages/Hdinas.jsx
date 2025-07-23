@@ -10,6 +10,7 @@ const Hdinas = () => {
       <Sidebar />
       <div className="main-content">
         <Navbar />
+        <div className="section-title">Gayamsari/Dinas</div>
         <Table />
       </div>
     </div>

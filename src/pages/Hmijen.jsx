@@ -10,6 +10,7 @@ const Hmijen = () => {
       <Sidebar />
       <div className="main-content">
         <Navbar />
+        <div className="section-title">Mijen</div>
         <Table />
       </div>
     </div>

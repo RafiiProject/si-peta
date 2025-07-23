@@ -12,12 +12,13 @@ $kecamatanList = [
 
 $res = [];
 foreach ($kecamatanList as $key) {
-    $q = $conn->query("
+      $q = $conn->query("
       SELECT 
-        COUNT(*) AS total,
+        SUM(keterangan != 'rusak') AS total,
         SUM(keterangan = 'rusak') AS rusak
       FROM `$key`
     ");
+
     if ($q) {
       $d = $q->fetch_assoc();
       $label = $key === "dinas"

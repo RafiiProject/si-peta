@@ -10,6 +10,7 @@ const Hpedurungan = () => {
       <Sidebar />
       <div className="main-content">
         <Navbar />
+        <div className="section-title">Pedurungan</div>
         <Table />
       </div>
     </div>

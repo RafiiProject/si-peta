@@ -10,6 +10,7 @@ const Hbanyumanik = () => {
       <Sidebar />
       <div className="main-content">
         <Navbar />
+        <div className="section-title">Banyumanik</div>
         <Table />
       </div>
     </div>

@@ -10,6 +10,7 @@ const Htembalang = () => {
       <Sidebar />
       <div className="main-content">
         <Navbar />
+        <div className="section-title">Tembalang</div>
         <Table />
       </div>
     </div>

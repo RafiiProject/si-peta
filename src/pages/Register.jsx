@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Navbar from "../components/Navbar/Navbar";
 import Sidebar from "../components/Sidebar/Sidebar";
@@ -12,6 +12,13 @@ const Register = () => {
   const [role, setRole] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
+
+  // Reset form ketika pertama kali load
+  useEffect(() => {
+    setEmail("");
+    setPassword("");
+    setRole("");
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -51,7 +58,7 @@ const Register = () => {
         <div className="register-wrapper">
           <h2 className="register-title">Tambah Pengguna</h2>
           <div className="form-card">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} autoComplete="off">
               <div className="form-grid">
                 <div>
                   <label>Email</label>
@@ -61,6 +68,7 @@ const Register = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
+                    autoComplete="off"
                   />
                 </div>
                 <div style={{ position: "relative" }}>
@@ -72,6 +80,7 @@ const Register = () => {
                     onChange={(e) => setPassword(e.target.value)}
                     required
                     style={{ paddingRight: "35px" }}
+                    autoComplete="new-password"
                   />
                   <span
                     onClick={toggleShowPassword}

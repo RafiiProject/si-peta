@@ -30,7 +30,7 @@ const Dashboard = () => {
         <div className="section-title">TPDK Data Charts</div>
         <DashboardCharts />
 
-        <div className="section-title">DAFTAR TPDK KECAMATAN</div>
+        <div className="section-title1">DAFTAR TPDK KECAMATAN</div>
         <div className="card-grid">
           {kecamatanData.map((item, idx) => (
             <Link to={item.path} key={idx} style={{ textDecoration: "none" }}>

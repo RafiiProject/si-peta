@@ -10,6 +10,7 @@ const Hngaliyan = () => {
       <Sidebar />
       <div className="main-content">
         <Navbar />
+        <div className="section-title">Ngaliyan</div>
         <Table />
       </div>
     </div>

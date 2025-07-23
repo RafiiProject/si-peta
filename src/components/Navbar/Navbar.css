@@ -54,4 +54,33 @@
   .item img {
     object-fit: contain;
   }
-  
+  /* Responsive - perkecil ukuran saat layar kecil */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 4px 10px;
+  }
+
+  .title {
+    font-size: 16px !important;
+  }
+
+  .arsip {
+    font-size: 10px !important;
+  }
+
+  .item i {
+    font-size: 14px;
+  }
+
+  .item img {
+    max-width: 200px;
+  }
+
+  .search {
+    margin-left: 4px;
+  }
+
+  .items {
+    gap: 8px;
+  }
+}
